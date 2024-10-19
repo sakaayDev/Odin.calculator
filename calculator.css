@@ -1,0 +1,61 @@
+html {
+    background-color: rgb(29, 29, 29);
+}
+header {
+    color: rgb(128, 128, 128);
+    font-size: 1.1em;
+    text-align: center;
+}
+header  li {
+    font-weight: bold;
+}
+#calculator {
+display: flex;
+flex-direction: column;
+margin: 0 auto;
+width: 250px;
+height: 300px;
+border: 2px solid rgb(24, 24, 24);
+padding: 4px;
+background-color: rgb(92, 92, 92);
+}
+
+#input,#reset,#btn-container,.btn,.numbers,.operators {
+    border: 1px solid rgba(58, 58, 58, 0.959);
+    display: flex;
+}
+#input,#reset,#btn-container {
+   flex: 1; 
+}
+#btn-container {
+    flex: 4;
+}
+#input input {
+    flex: 1;
+}
+#reset  {
+ justify-content: center;
+}
+.btn,.operators {
+    flex-direction: column;
+}
+.btn {
+    flex-grow: 3;
+}
+
+.numbers {
+    flex: 1;
+}
+.operators {
+    flex: 1;
+
+}
+
+.numbers div, .operators div {
+    flex: 1 ;
+    display: flex;
+    border: 1px solid;
+    
+    justify-content: center;
+    align-items: center;
+}
