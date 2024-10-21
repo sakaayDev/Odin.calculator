@@ -33,3 +33,12 @@ console.log(operate(2,"*",5));
 console.log(operate(15,"/",3));
 console.log(operate(25,"*",2));
 console.log(operate)
+let display = document.querySelector("#display input");
+let resetBtn = document.querySelector("#reset input");
+resetBtn.addEventListener("click",()=> display.value ="");
+let buttons =document.querySelectorAll("#btn-container button");
+buttons.forEach(button => button.addEventListener("click",()=> {
+    if(button.textContent ==="=");
+        else {display.value +=button.textContent}
+    }));
+// i need to store first and second number and operator?//

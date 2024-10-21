@@ -8,6 +8,7 @@ header {
 }
 header  li {
     font-weight: bold;
+    list-style: none;
 }
 #calculator {
 display: flex;
@@ -20,18 +21,21 @@ padding: 4px;
 background-color: rgb(92, 92, 92);
 }
 
-#input,#reset,#btn-container,.btn,.numbers,.operators {
+#display,#reset,#btn-container,.btn,.numbers,.operators {
     border: 1px solid rgba(58, 58, 58, 0.959);
     display: flex;
 }
-#input,#reset,#btn-container {
+#display,#reset,#btn-container {
    flex: 1; 
 }
 #btn-container {
     flex: 4;
+    /* background-color: darkred; */
 }
-#input input {
+#display input {
     flex: 1;
+    background-color: rgba(168, 168, 168, 0.849);
+    text-align: right;
 }
 #reset  {
  justify-content: center;
@@ -51,11 +55,12 @@ background-color: rgb(92, 92, 92);
 
 }
 
-.numbers div, .operators div {
+.numbers button, .operators button {
     flex: 1 ;
     display: flex;
-    border: 1px solid;
-    
+    /* border: 1px solid; */
     justify-content: center;
     align-items: center;
+    margin: 2px;
+    /* background-color: rgba(168, 168, 168, 0.849); */
 }
