@@ -1,66 +1,62 @@
 html {
-    background-color: rgb(29, 29, 29);
+    background-color: rgb(95, 95, 95);
 }
-header {
-    color: rgb(128, 128, 128);
-    font-size: 1.1em;
-    text-align: center;
+div {
+    display: flex;
 }
-header  li {
-    font-weight: bold;
-    list-style: none;
+
+#calculator,#mainContainer {
+    border: 1px solid black;
+    flex-direction: column;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(155, 155, 155);
+}
+#mainContainer {
+    border: none;
 }
 #calculator {
-display: flex;
-flex-direction: column;
-margin: 0 auto;
-width: 250px;
-height: 300px;
-border: 2px solid rgb(24, 24, 24);
-padding: 4px;
-background-color: rgb(92, 92, 92);
+    width: fit-content;
+    /* padding: 5px; */
+    margin: 0 auto;
+    /* border: 2px dashed black; */
+    background-color:rgb(61, 61, 61);
 }
-
-#display,#reset,#btn-container,.btn,.numbers,.operators {
-    border: 1px solid rgba(58, 58, 58, 0.959);
-    display: flex;
-}
-#display,#reset,#btn-container {
-   flex: 1; 
-}
-#btn-container {
-    flex: 4;
-    /* background-color: darkred; */
-}
-#display input {
-    flex: 1;
-    background-color: rgba(168, 168, 168, 0.849);
-    text-align: right;
-}
-#reset  {
- justify-content: center;
-}
-.btn,.operators {
+#display {
+    /* border: 1px dashed rgb(255, 255, 255); */
+    margin: 1px;
+    padding: 2px 0px;
     flex-direction: column;
+    
 }
-.btn {
-    flex-grow: 3;
+input {
+    width: 200px;
+    height: 20px;
+    background-color: rgb(155, 155, 155);
+    padding: 5px;
+    text-align: right;
+    border: none;
+    /* border-radius: 5px; */
+    margin: 0 auto;
+    
+}
+.secondaryInput {
+    height: 10px;
+}
+button {
+    background-color: silver;
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    margin: 1px;
+    
 }
 
-.numbers {
-    flex: 1;
-}
-.operators {
-    flex: 1;
-
+#clear,#result {
+    width: 100px;
+    background-color: goldenrod;
 }
 
-.numbers button, .operators button {
-    flex: 1 ;
-    display: flex;
-    /* border: 1px solid; */
-    justify-content: center;
-    align-items: center;
-    margin: 2px;
-    /* background-color: rgba(168, 168, 168, 0.849); */
+.operator {
+    background-color: gold;
 }
