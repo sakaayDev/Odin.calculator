@@ -1,6 +1,9 @@
 html {
     background-color: rgb(95, 95, 95);
 }
+header {
+    margin-bottom: 200px;
+}
 div {
     display: flex;
 }
@@ -27,6 +30,7 @@ div {
     margin: 1px;
     padding: 2px 0px;
     flex-direction: column;
+    pointer-events: none;
     
 }
 input {
@@ -40,8 +44,9 @@ input {
     margin: 0 auto;
     
 }
-.secondaryInput {
+.secondaryDisplay {
     height: 10px;
+    font-size: 0.65em;
 }
 button {
     background-color: silver;
@@ -52,7 +57,7 @@ button {
     
 }
 
-#clear,#result {
+#clear,#resultBtn {
     width: 100px;
     background-color: goldenrod;
 }

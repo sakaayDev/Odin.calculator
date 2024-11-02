@@ -1,3 +1,4 @@
+//function for calculator operation
 function add(number1,number2){
     return number1 + number2;
 };
@@ -13,9 +14,13 @@ function multiply(number1,number2){
 function divide(number1,number2){
     return number1 / number2 ;
 }
-let numbers = [], firstNumber,secondNumber,operator;
+function power(number1,number2){
+    return number1 ** number2;
+};
+// init variable that hold number1,number2,operator,result
+let numbers,result,resultBtn,clear,operators,number1,number2,operat;
 
-
+//function that return whatever math operation we want depending on operator chosen 
 function operate(number1,operator,number2){
     if( operator ==="+"){
         return add(number1,number2)
@@ -25,32 +30,77 @@ function operate(number1,operator,number2){
         return divide(number1,number2)        
     }else if(operator ==="*"){
         return multiply(number1,number2)
+    }else if(operator ==="^"){
+        return power(number1,number2)
     };
 }
-let display = document.querySelector("#display input");
 
-// let resetBtn = document.querySelector("#reset input");
-// resetBtn.addEventListener("click",()=> display.value ='');
-// let buttons =document.querySelectorAll("#btn-container button");
-// buttons.forEach(button => button.addEventListener("click",()=> {
-//     if(button.textContent ==="="){
-//         let parts;
-//         parts = display.value.split(/\s*(\*\*|[+\-*/])\s*/);
-//         parts.forEach(part => {
-//             if (isNaN(part)){
-//                 operator = part;
-//             }else {
-//                 numbers.push(Number(part));
-//             }
-//             number1 = numbers[0];
-//             number2 = numbers[1];
-//         });
-        
-//     }else {display.value +=button.textContent}
-// }));
-        
-//  i need to store first and second number and operator?//
-// split the input field using regular expression? then store index 0 and 1 in       number1 and 2//
-// \s*: This part of the regex matches any whitespace character (spaces, tabs, etc.) zero or more times.
-// Including \s* allows your regex to handle cases where there might be spaces around the operators. For example, it would match both 12344 + 91257 and 12344+91257.
+let display = document.querySelector(".mainDisplay");
+let secondaryDisplay = document.querySelector(".secondaryDisplay");
+display.value =0;
+//handle numbers click,also save number2 into it's variable
+numbers = document.querySelectorAll(".number");
+let numberClicked =numbers.forEach((number)=>{
+    number.addEventListener("click",()=>{
+        if(display.value === operat){
+            display.value="";
+            display.value += number.textContent;
+            number2 = Number(display.value);
+        }else if(operat){
+            display.value +=number.textContent;
+            number2 = Number(display.value);
+        }else {
+            display.value += number.textContent;
+        }
+        secondaryDisplay.value += number.textContent;
+    });
+});
+//handle operator click,also save number1 and operator into their variable
+operators = document.querySelectorAll(".operator");
+operators.forEach((operator)=>{
+    operator.addEventListener("click",()=>{
+        if(number1 && result){
+            number1 = result;
+            display.value="";
+            display.value += operator.textContent;
+            operat = display.value;
+        }
+        else if(number1){
+            display.value="";
+            display.value += operator.textContent;
+            operat = display.value;
+        }
+        else if(display.value !="" ){
+            number1 = Number(display.value);
+            display.value="";
+            display.value += operator.textContent;
+            operat = display.value;
+        };
+        secondaryDisplay.value += operator.textContent;
+    });
+});
+
+clear = document.querySelector("#clear");
+clear.addEventListener("click",()=>{
+    display.value ="";
+    secondaryDisplay.value="";
+    number1="";
+    number2="";
+    operat="";
+    result="";
+    
+});
+
+resultBtn = document.querySelector("#resultBtn");
+resultBtn.addEventListener("click",()=>{
+    ;
+    if(number1,number2,operat){
+        display.value="";
+        result = operate(number1,operat,number2);
+        display.value = result;
+    }
+})
+
+
+
 

@@ -8,23 +8,16 @@
 </head>
 <body>
     <header>
-        <h1>what would a calculator need </h1>
-        <ul>
-            <li>a display for input and result</li>
-            <li> operator for the calculation:addition,subsctraction,multiplication,division those are the basics</li>
-            <li> numbers from 0 to 9</li>
-            <li> result sign and reset</li>
-        </ul>
     </header>
     <div id="calculator">
         <div id="display">
-            <input type="text" class="mainInput">
-            <input type="text" class="secondaryInput">   <!--readonly -->
+            <input type="text" class="mainDisplay" readonly>
+            <input type="text" class="secondaryDisplay" readonly>   <!--readonly -->
         </div>
         <div id="mainContainer">
             <div class="childContainer">
                 <button id="clear">C</button>
-                <button class="operator">**</button>
+                <button class="operator">^</button>
                 <button class="operator">/</button>
             </div>
             <div class="childContainer">
@@ -48,7 +41,7 @@
             <div class="childContainer">
                 <button class="number">.</button>
                 <button class="number">0</button>
-                <button id="result">=</button>
+                <button id="resultBtn">=</button>
             </div>
             
         </div>
