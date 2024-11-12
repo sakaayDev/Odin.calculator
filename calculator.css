@@ -1,8 +1,12 @@
 html {
     background-color: rgb(95, 95, 95);
 }
-header {
-    margin-bottom: 200px;
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 div {
     display: flex;
@@ -20,10 +24,10 @@ div {
 }
 #calculator {
     width: fit-content;
-    /* padding: 5px; */
     margin: 0 auto;
-    /* border: 2px dashed black; */
     background-color:rgb(61, 61, 61);
+    border-radius: 10px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.6);
 }
 #display {
     /* border: 1px dashed rgb(255, 255, 255); */
@@ -49,19 +53,29 @@ input {
     font-size: 0.65em;
 }
 button {
-    background-color: silver;
+    background-color: hsl(0, 0%, 75%);
     width: 50px;
     height: 50px;
     border-radius: 20px;
     margin: 1px;
+    /* transition: filter 0.1s; */
     
 }
-
-#clear,#resultBtn {
+#resultBtn {
     width: 100px;
-    background-color: goldenrod;
+    background-color: hsl(210, 15%, 55%);
+}
+#clear,#backspace {
+    width: 50px;
+    background-color: hsl(210, 15%, 55%);
 }
 
 .operator {
-    background-color: gold;
+    background-color: hsl(220, 15%, 40%);
 }
+button:hover {
+    filter: brightness(1.2);
+}
+/* button:active {
+    filter: brightness(1.5);
+} */
